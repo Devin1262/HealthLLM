@@ -1,0 +1,17 @@
+{
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/iac/package",
+    "${workspaceFolder}/src/lambda"
+  ],
+  "python.autoComplete.extraPaths": [
+    "${workspaceFolder}/iac/package",
+    "${workspaceFolder}/src/lambda"
+  ],
+
+  "terminal.integrated.env.windows": {
+    "PYTHONPATH": "${workspaceFolder}/iac/package;${workspaceFolder}/src/lambda"
+  },
+  "terminal.integrated.env.linux": {
+    "PYTHONPATH": "${workspaceFolder}/iac/package:${workspaceFolder}/src/lambda"
+  }
+}

@@ -1,0 +1,6 @@
+# Force all .sh files to use LF (Linux) line endings
+*.sh text eol=lf
+
+# Ensure the zip file and other binaries aren't messed with
+*.zip binary
+*.png binary

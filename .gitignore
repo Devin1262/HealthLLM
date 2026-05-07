@@ -1,0 +1,46 @@
+ui/llm_diagnosis/node_modules/
+ui/llm_diagnosis/dist/
+ui/llm_diagnosis/.vscode
+iac/package/
+src/lambda/package/
+src/lambda/.venv/
+src/lambda/venv/
+*.tfstate
+*.tfstate.backup
+.terraform/
+*/lambda.zip
+*.terraform.lock.hcl
+*/.angular/cache
+*.pyc
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bin/
+obj/
+
+# Visual Studio / VS Code
+.vs/
+.vscode/*
+!.vscode/settings.json
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# invoke_LLM.sh output
+tools/CustomLLMExampleUsage/response*.json
+
+# Synthea output
+tools/Synthea/output
+tools/Synthea/*.jar
+
+# Local credentials / login info
+AWS_login_Info.txt
+
+# NuGet Packages
+packages/
+*.nuget.props
+*.nuget.targets

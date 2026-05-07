@@ -1,0 +1,1256 @@
+{
+  "info": {
+    "_postman_id": "2e493af0-59b1-4d3a-8be3-208c5a09ec60",
+    "name": "CS6440_API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "39104091"
+  },
+  "item": [
+    {
+      "name": "Conditions",
+      "item": [
+        {
+          "name": "Get Patient Conditions",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{id_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/patient/05016305-3904-4b36-85da-17e6150998ff/conditions",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "patient",
+                "05016305-3904-4b36-85da-17e6150998ff",
+                "conditions"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Patient Condition",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{id_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"resourceType\": \"Condition\",\r\n  \"clinicalStatus\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/condition-clinical\",\r\n        \"code\": \"active\",\r\n        \"display\": \"Active\"\r\n      }\r\n    ]\r\n  },\r\n  \"verificationStatus\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/condition-ver-status\",\r\n        \"code\": \"confirmed\",\r\n        \"display\": \"Confirmed\"\r\n      }\r\n    ]\r\n  },\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/condition-category\",\r\n          \"code\": \"encounter-diagnosis\",\r\n          \"display\": \"Encounter Diagnosis\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"severity\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"255604002\",\r\n        \"display\": \"Mild\"\r\n      }\r\n    ]\r\n  },\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://snomed.info/sct\",\r\n        \"code\": \"38341003\",\r\n        \"display\": \"Hypertension\"\r\n      }\r\n    ],\r\n    \"text\": \"Essential Hypertension\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/05016305-3904-4b36-85da-17e6150998ff\",\r\n    \"display\": \"Jake Leggore\"\r\n  },\r\n  \"encounter\": {\r\n    \"reference\": \"Encounter/be465f61-29b8-4f13-9f6b-2ac4f1e07709\"\r\n  },\r\n  \"onsetDateTime\": \"2026-03-28T20:29:20Z\",\r\n  \"recordedDate\": \"2026-04-27T21:30:00Z\",\r\n  \"recorder\": {\r\n    \"display\": \"Dr. Smith\"\r\n  }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/patient/05016305-3904-4b36-85da-17e6150998ff/conditions",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "patient",
+                "05016305-3904-4b36-85da-17e6150998ff",
+                "conditions"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Patient Condition",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{id_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/patient/05016305-3904-4b36-85da-17e6150998ff/conditions/030c0c9a-ae0a-4879-95c5-8a3de94cbf1f",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "patient",
+                "05016305-3904-4b36-85da-17e6150998ff",
+                "conditions",
+                "030c0c9a-ae0a-4879-95c5-8a3de94cbf1f"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Allergies",
+      "item": [
+        {
+          "name": "Get Patient Allergies",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{id_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/patient/05016305-3904-4b36-85da-17e6150998ff/allergies",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "patient",
+                "05016305-3904-4b36-85da-17e6150998ff",
+                "allergies"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Patient Allergy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{id_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"resourceType\": \"AllergyIntolerance\",\r\n  \"clinicalStatus\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical\",\r\n        \"code\": \"active\",\r\n        \"display\": \"Active\"\r\n      }\r\n    ]\r\n  },\r\n  \"verificationStatus\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/allergyintolerance-verification\",\r\n        \"code\": \"confirmed\",\r\n        \"display\": \"Confirmed\"\r\n      }\r\n    ]\r\n  },\r\n  \"type\": \"allergy\",\r\n  \"category\": [\r\n    \"medication\"\r\n  ],\r\n  \"criticality\": \"high\",\r\n  \"code\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://www.nlm.nih.gov/research/owl/rxnorm\",\r\n        \"code\": \"7980\",\r\n        \"display\": \"Penicillin G\"\r\n      }\r\n    ],\r\n    \"text\": \"Penicillin G\"\r\n  },\r\n  \"patient\": {\r\n    \"reference\": \"Patient/05016305-3904-4b36-85da-17e6150998ff\",\r\n    \"display\": \"Jake Leggore\"\r\n  },\r\n  \"recordedDate\": \"2026-04-27T10:00:00Z\",\r\n  \"recorder\": {\r\n    \"display\": \"Dr. Smith\"\r\n  },\r\n  \"reaction\": [\r\n    {\r\n      \"manifestation\": [\r\n        {\r\n          \"coding\": [\r\n            {\r\n              \"system\": \"http://snomed.info/sct\",\r\n              \"code\": \"247472004\",\r\n              \"display\": \"Hives\"\r\n            }\r\n          ],\r\n          \"text\": \"Hives\"\r\n        }\r\n      ],\r\n      \"severity\": \"severe\"\r\n    }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/patient/05016305-3904-4b36-85da-17e6150998ff/allergies",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "patient",
+                "05016305-3904-4b36-85da-17e6150998ff",
+                "allergies"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Patient Allergy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{id_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/patient/05016305-3904-4b36-85da-17e6150998ff/allergies/ce5d8de1-34ff-4dad-82a7-54a9dfa6d680",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "patient",
+                "05016305-3904-4b36-85da-17e6150998ff",
+                "allergies",
+                "ce5d8de1-34ff-4dad-82a7-54a9dfa6d680"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Medications",
+      "item": [
+        {
+          "name": "Get Patient Medications",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{id_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/patient/05016305-3904-4b36-85da-17e6150998ff/medications",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "patient",
+                "05016305-3904-4b36-85da-17e6150998ff",
+                "medications"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Patient Medication",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{id_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"resourceType\": \"MedicationRequest\",\r\n  \"status\": \"active\",\r\n  \"intent\": \"order\",\r\n  \"category\": [\r\n    {\r\n      \"coding\": [\r\n        {\r\n          \"system\": \"http://terminology.hl7.org/CodeSystem/medicationrequest-category\",\r\n          \"code\": \"outpatient\",\r\n          \"display\": \"Outpatient\"\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"medicationCodeableConcept\": {\r\n    \"coding\": [\r\n      {\r\n        \"system\": \"http://www.nlm.nih.gov/research/owl/rxnorm\",\r\n        \"code\": \"864666\",\r\n        \"display\": \"Lisinopril 10 MG Oral Tablet\"\r\n      }\r\n    ],\r\n    \"text\": \"Lisinopril 10mg Tablet\"\r\n  },\r\n  \"subject\": {\r\n    \"reference\": \"Patient/05016305-3904-4b36-85da-17e6150998ff\",\r\n    \"display\": \"Jake Leggore\"\r\n  },\r\n  \"authoredOn\": \"2026-04-27T10:00:00Z\",\r\n  \"requester\": {\r\n    \"display\": \"Dr. Smith\"\r\n  },\r\n  \"dosageInstruction\": [\r\n    {\r\n      \"text\": \"Take 1 tablet by mouth daily\",\r\n      \"timing\": {\r\n        \"repeat\": {\r\n          \"frequency\": 1,\r\n          \"period\": 1,\r\n          \"periodUnit\": \"d\"\r\n        }\r\n      },\r\n      \"route\": {\r\n        \"coding\": [\r\n          {\r\n            \"system\": \"http://snomed.info/sct\",\r\n            \"code\": \"26643006\",\r\n            \"display\": \"Oral route\"\r\n          }\r\n        ]\r\n      },\r\n      \"doseAndRate\": [\r\n        {\r\n          \"type\": {\r\n            \"coding\": [\r\n              {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/dose-rate-type\",\r\n                \"code\": \"ordered\",\r\n                \"display\": \"Ordered\"\r\n              }\r\n            ]\r\n          },\r\n          \"doseQuantity\": {\r\n            \"value\": 1,\r\n            \"unit\": \"TAB\",\r\n            \"system\": \"http://terminology.hl7.org/CodeSystem/v3-orderableDeviceCharacteristics\",\r\n            \"code\": \"TAB\"\r\n          }\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/patient/05016305-3904-4b36-85da-17e6150998ff/medications",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "patient",
+                "05016305-3904-4b36-85da-17e6150998ff",
+                "medications"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Patient Medication",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{id_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/patient/05016305-3904-4b36-85da-17e6150998ff/medications/a0a73bf8-d4e5-48da-b16f-7a4ab6a34ff5",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "patient",
+                "05016305-3904-4b36-85da-17e6150998ff",
+                "medications",
+                "a0a73bf8-d4e5-48da-b16f-7a4ab6a34ff5"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Encounters",
+      "item": [
+        {
+          "name": "Get Patient Encounters",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{id_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/patient/05016305-3904-4b36-85da-17e6150998ff/encounters",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "patient",
+                "05016305-3904-4b36-85da-17e6150998ff",
+                "encounters"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Patient Encounter",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{id_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"resourceType\": \"Encounter\",\r\n    \"id\": \"be465f61-29b8-4f13-9f6b-2ac4f1e07709\",\r\n    \"meta\": {\r\n        \"versionId\": \"1\",\r\n        \"lastUpdated\": \"2026-03-28T20:29:20.321351081Z\"\r\n    },\r\n    \"status\": \"finished\",\r\n    \"class\": {\r\n        \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\",\r\n        \"code\": \"AMB\"\r\n    },\r\n    \"subject\": {\r\n        \"reference\": \"Patient/05016305-3904-4b36-85da-17e6150998ff\"\r\n    },\r\n    \"type\": [\r\n        {\r\n            \"text\": \"Follow-up visit\"\r\n        }\r\n    ],\r\n    \"reasonCode\": [\r\n        {\r\n            \"text\": \"Persistent cough and muscle aches\"\r\n        }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/patient/05016305-3904-4b36-85da-17e6150998ff/encounters/be465f61-29b8-4f13-9f6b-2ac4f1e07709",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "patient",
+                "05016305-3904-4b36-85da-17e6150998ff",
+                "encounters",
+                "be465f61-29b8-4f13-9f6b-2ac4f1e07709"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Resources",
+      "item": [
+        {
+          "name": "Read Resource",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{id_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/fhir/96023880411ad9ab19a89b6b24558063/Patient/05016305-3904-4b36-85da-17e6150998ff",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "fhir",
+                "96023880411ad9ab19a89b6b24558063",
+                "Patient",
+                "05016305-3904-4b36-85da-17e6150998ff"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search Resources",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{id_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/fhir/96023880411ad9ab19a89b6b24558063/Patient",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "fhir",
+                "96023880411ad9ab19a89b6b24558063",
+                "Patient"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Resource",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{id_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"id\": \"04c704c4-5d2d-4308-9c33-1690a6e47a6b\",\r\n    \"text\": {\r\n        \"status\": \"generated\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Generated by <a href=\\\"https://github.com/synthetichealth/synthea\\\">Synthea</a>.Version identifier: master-branch-latest\\n .   Person seed: -1028339658756901078  Population seed: 1593457889422</div>\"\r\n    },\r\n    \"extension\": [\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName\",\r\n            \"valueString\": \"Jacquelin132 Zemlak964\"\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\",\r\n            \"valueAddress\": {\r\n                \"city\": \"Haverhill\",\r\n                \"state\": \"Massachusetts\",\r\n                \"country\": \"US\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://synthetichealth.github.io/synthea/disability-adjusted-life-years\",\r\n            \"valueDecimal\": 0.00395599232589674\r\n        },\r\n        {\r\n            \"url\": \"http://synthetichealth.github.io/synthea/quality-adjusted-life-years\",\r\n            \"valueDecimal\": 21.996044007674104\r\n        }\r\n    ],\r\n    \"identifier\": [\r\n        {\r\n            \"system\": \"https://github.com/synthetichealth/synthea\",\r\n            \"value\": \"04c704c4-5d2d-4308-9c33-1690a6e47a6b\"\r\n        },\r\n        {\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"MR\",\r\n                        \"display\": \"Medical Record Number\"\r\n                    }\r\n                ],\r\n                \"text\": \"Medical Record Number\"\r\n            },\r\n            \"system\": \"http://hospital.smarthealthit.org\",\r\n            \"value\": \"04c704c4-5d2d-4308-9c33-1690a6e47a6b\"\r\n        },\r\n        {\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"SS\",\r\n                        \"display\": \"Social Security Number\"\r\n                    }\r\n                ],\r\n                \"text\": \"Social Security Number\"\r\n            },\r\n            \"system\": \"http://hl7.org/fhir/sid/us-ssn\",\r\n            \"value\": \"999-83-3466\"\r\n        },\r\n        {\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"DL\",\r\n                        \"display\": \"Driver's License\"\r\n                    }\r\n                ],\r\n                \"text\": \"Driver's License\"\r\n            },\r\n            \"system\": \"urn:oid:2.16.840.1.113883.4.3.25\",\r\n            \"value\": \"S99998319\"\r\n        },\r\n        {\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"PPN\",\r\n                        \"display\": \"Passport Number\"\r\n                    }\r\n                ],\r\n                \"text\": \"Passport Number\"\r\n            },\r\n            \"system\": \"http://standardhealthrecord.org/fhir/StructureDefinition/passportNumber\",\r\n            \"value\": \"X75739588X\"\r\n        }\r\n    ],\r\n    \"name\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"family\": \"Little434\",\r\n            \"given\": [\r\n                \"Dexter530\"\r\n            ],\r\n            \"prefix\": [\r\n                \"Mr.\"\r\n            ]\r\n        }\r\n    ],\r\n    \"telecom\": [\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"555-132-1111\",\r\n            \"use\": \"home\"\r\n        }\r\n    ],\r\n    \"gender\": \"male\",\r\n    \"birthDate\": \"1997-11-22\",\r\n    \"address\": [\r\n        {\r\n            \"extension\": [\r\n                {\r\n                    \"url\": \"http://hl7.org/fhir/StructureDefinition/geolocation\",\r\n                    \"extension\": [\r\n                        {\r\n                            \"url\": \"latitude\",\r\n                            \"valueDecimal\": 42.153621929974896\r\n                        },\r\n                        {\r\n                            \"url\": \"longitude\",\r\n                            \"valueDecimal\": -71.33316034414361\r\n                        }\r\n                    ]\r\n                }\r\n            ],\r\n            \"line\": [\r\n                \"738 Cassin Club\"\r\n            ],\r\n            \"city\": \"Millis\",\r\n            \"state\": \"Massachusetts\",\r\n            \"country\": \"US\"\r\n        }\r\n    ],\r\n    \"maritalStatus\": {\r\n        \"coding\": [\r\n            {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\",\r\n                \"code\": \"S\",\r\n                \"display\": \"Never Married\"\r\n            }\r\n        ],\r\n        \"text\": \"Never Married\"\r\n    },\r\n    \"multipleBirthBoolean\": false,\r\n    \"communication\": [\r\n        {\r\n            \"language\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"urn:ietf:bcp:47\",\r\n                        \"code\": \"en-US\",\r\n                        \"display\": \"English\"\r\n                    }\r\n                ],\r\n                \"text\": \"English\"\r\n            }\r\n        }\r\n    ],\r\n    \"meta\": {\r\n        \"lastUpdated\": \"2026-03-28T20:29:14.548551734Z\",\r\n        \"versionId\": \"1\"\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/fhir/96023880411ad9ab19a89b6b24558063/Patient",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "fhir",
+                "96023880411ad9ab19a89b6b24558063",
+                "Patient"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Resource",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{id_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"id\": \"04c704c4-5d2d-4308-9c33-1690a6e47a6b\",\r\n    \"text\": {\r\n        \"status\": \"generated\",\r\n        \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Generated by <a href=\\\"https://github.com/synthetichealth/synthea\\\">Synthea</a>.Version identifier: master-branch-latest\\n .   Person seed: -1028339658756901078  Population seed: 1593457889422</div>\"\r\n    },\r\n    \"extension\": [\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName\",\r\n            \"valueString\": \"Jacquelin132 Zemlak964\"\r\n        },\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\",\r\n            \"valueAddress\": {\r\n                \"city\": \"ButtMile\",\r\n                \"state\": \"Massachusetts\",\r\n                \"country\": \"US\"\r\n            }\r\n        },\r\n        {\r\n            \"url\": \"http://synthetichealth.github.io/synthea/disability-adjusted-life-years\",\r\n            \"valueDecimal\": 0.00395599232589674\r\n        },\r\n        {\r\n            \"url\": \"http://synthetichealth.github.io/synthea/quality-adjusted-life-years\",\r\n            \"valueDecimal\": 21.996044007674104\r\n        }\r\n    ],\r\n    \"identifier\": [\r\n        {\r\n            \"system\": \"https://github.com/synthetichealth/synthea\",\r\n            \"value\": \"04c704c4-5d2d-4308-9c33-1690a6e47a6b\"\r\n        },\r\n        {\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"MR\",\r\n                        \"display\": \"Medical Record Number\"\r\n                    }\r\n                ],\r\n                \"text\": \"Medical Record Number\"\r\n            },\r\n            \"system\": \"http://hospital.smarthealthit.org\",\r\n            \"value\": \"04c704c4-5d2d-4308-9c33-1690a6e47a6b\"\r\n        },\r\n        {\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"SS\",\r\n                        \"display\": \"Social Security Number\"\r\n                    }\r\n                ],\r\n                \"text\": \"Social Security Number\"\r\n            },\r\n            \"system\": \"http://hl7.org/fhir/sid/us-ssn\",\r\n            \"value\": \"111-83-3466\"\r\n        },\r\n        {\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"DL\",\r\n                        \"display\": \"Driver's License\"\r\n                    }\r\n                ],\r\n                \"text\": \"Driver's License\"\r\n            },\r\n            \"system\": \"urn:oid:2.16.840.1.113883.4.3.25\",\r\n            \"value\": \"S99998319\"\r\n        },\r\n        {\r\n            \"type\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                        \"code\": \"PPN\",\r\n                        \"display\": \"Passport Number\"\r\n                    }\r\n                ],\r\n                \"text\": \"Passport Number\"\r\n            },\r\n            \"system\": \"http://standardhealthrecord.org/fhir/StructureDefinition/passportNumber\",\r\n            \"value\": \"X75739588X\"\r\n        }\r\n    ],\r\n    \"name\": [\r\n        {\r\n            \"use\": \"official\",\r\n            \"family\": \"Little434\",\r\n            \"given\": [\r\n                \"Dexter530\"\r\n            ],\r\n            \"prefix\": [\r\n                \"Mr.\"\r\n            ]\r\n        }\r\n    ],\r\n    \"telecom\": [\r\n        {\r\n            \"system\": \"phone\",\r\n            \"value\": \"555-132-1111\",\r\n            \"use\": \"home\"\r\n        }\r\n    ],\r\n    \"gender\": \"male\",\r\n    \"birthDate\": \"1997-11-22\",\r\n    \"address\": [\r\n        {\r\n            \"extension\": [\r\n                {\r\n                    \"url\": \"http://hl7.org/fhir/StructureDefinition/geolocation\",\r\n                    \"extension\": [\r\n                        {\r\n                            \"url\": \"latitude\",\r\n                            \"valueDecimal\": 42.153621929974896\r\n                        },\r\n                        {\r\n                            \"url\": \"longitude\",\r\n                            \"valueDecimal\": -71.33316034414361\r\n                        }\r\n                    ]\r\n                }\r\n            ],\r\n            \"line\": [\r\n                \"738 Cassin Club\"\r\n            ],\r\n            \"city\": \"Millis\",\r\n            \"state\": \"Massachusetts\",\r\n            \"country\": \"US\"\r\n        }\r\n    ],\r\n    \"maritalStatus\": {\r\n        \"coding\": [\r\n            {\r\n                \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\",\r\n                \"code\": \"S\",\r\n                \"display\": \"Never Married\"\r\n            }\r\n        ],\r\n        \"text\": \"Never Married\"\r\n    },\r\n    \"multipleBirthBoolean\": false,\r\n    \"communication\": [\r\n        {\r\n            \"language\": {\r\n                \"coding\": [\r\n                    {\r\n                        \"system\": \"urn:ietf:bcp:47\",\r\n                        \"code\": \"en-US\",\r\n                        \"display\": \"English\"\r\n                    }\r\n                ],\r\n                \"text\": \"English\"\r\n            }\r\n        }\r\n    ],\r\n    \"meta\": {\r\n        \"lastUpdated\": \"2026-03-28T20:29:14.548551734Z\",\r\n        \"versionId\": \"1\"\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/fhir/96023880411ad9ab19a89b6b24558063/Patient/04c704c4-5d2d-4308-9c33-1690a6e47a6b",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "fhir",
+                "96023880411ad9ab19a89b6b24558063",
+                "Patient",
+                "04c704c4-5d2d-4308-9c33-1690a6e47a6b"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Resource",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{id_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/fhir/96023880411ad9ab19a89b6b24558063/Patient/04c704c4-5d2d-4308-9c33-1690a6e47a6b",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "fhir",
+                "96023880411ad9ab19a89b6b24558063",
+                "Patient",
+                "04c704c4-5d2d-4308-9c33-1690a6e47a6b"
+              ],
+              "query": [
+                {
+                  "key": "",
+                  "value": null,
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "LLM",
+      "item": [
+        {
+          "name": "LLM Summarize",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{id_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"resourceType\": \"Bundle\",\r\n    \"type\": \"searchset\",\r\n    \"link\": [\r\n        {\r\n            \"relation\": \"next\",\r\n            \"url\": \"https://healthlake.us-east-1.amazonaws.com/datastore/96023880411ad9ab19a89b6b24558063/r4/Patient?page=AAMA-EFRSURBSGpqNHY4UkN2N3VsUmtFczBSa3AxaDhkYUN5TGdaNHp3cVNnbjZ5cUYvYWl3SE52NFBRNXJRaTNlMEFJeXdXYkxUVUFBQUFmakI4QmdrcWhraUc5dzBCQndhZ2J6QnRBZ0VBTUdnR0NTcUdTSWIzRFFFSEFUQWVCZ2xnaGtnQlpRTUVBUzR3RVFRTUVWWWg3VzdlY1Bva1lEWTFBZ0VRZ0R1OHpZRFBOYzFRMFNzS0lYR2FhNWlLV0gveE1CU1hEcmxvUy9BOGFFbkx4RGFBeVdhZldyUkdveURhdG9kSVB3WHJaczhjUEk3SzRXU3Q0QT09vVhRYK9_mYZcjACQwfS7VP-3M6W2qjpDFG-qVmxA4lfirQ6Jk9x7RHXiSs0UcAJ6W-SxaSbR-bs6QGAyxn46tB5HAOLoIjNym8W_cqFcy24xjEEs3qT0IETBdpLP-F6z-IZB9rO29uZT6kkWlSaKtW6G3wdlvg4u_eGZ1E3tNrM5B2FJgYnJTnzPs94bSIkdS91tPZTG6REqKhVuNN7IHvoI4G2Lj9c_UodaKManP-7_dStzkBPsRu6-Helvj3TL7UgEL13gvuxpHW9HIBpxOYCJRP9tdaLOHFd2J0pipYSjy0VbwEfPYiL8wTkDBG-rE0GgwbNI9sl6yyAR5YyhNX2o0NKtGdL3jtDZ0M6mSBWsllEYRjk5R8zBi2dDOekPF4jh8wTURpDyS_rL9xAqQzBp-3UL9SxpAXJqM4hauloi5maKUmrr2kC0cVZc-l_eWu3Dp5-uJkpOLGlz8Dviyl0XUiKyF2UgS9Ks-fP3JD4LUacCDYZQ9b5N72IqRR8SsieczvJiJ7IRUiu-Dheiahl2Iv-_WXwvMRLfMy4f-tjpqcz0-e7YQTxaN18eHxfA9Cw_y0E459BCKwsWkQ0uFNqFJAF1FljnHrXSRzZjheghphG0CSkWnDzGr9LQZ7sHZq0tFl9KsLIbesoav6tI4QHet1OrEjXUYzOy0KwObxjX_iLv3Q-FJd1qQTdlYDH5CCgfkES_FrAbMwuP2dlUCM7Sb2zehLrkA4o7DRz5nCPMTenVXsJej8CSmqHkjMFOIOu3VRXEXdDMQq9dFGCiwhBKYt0LzNWlNrrcnq1DqHvQIbzJlSf9PxaN6glaBdKWtUlgUYdgI3Pnyp7qKMaa2e-A3rLuLh8u9PJanqCqOA8tpmqkDLQmACRrl1XLXohp6vGs9o1LryWlej-rmW8pjVqDU4ZTc18cIDaTtTRSzgrG3dXv9J2xuzK6_TwuswwE-tIFcbmX1Ps1vGGAOvCfVnMS7B2QYXNC6vhCQBvZgA2aOnHJNW6Rmw==\"\r\n        }\r\n    ],\r\n    \"entry\": [\r\n        {\r\n            \"resource\": {\r\n                \"resourceType\": \"Patient\",\r\n                \"id\": \"04c704c4-5d2d-4308-9c33-1690a6e47a6b\",\r\n                \"meta\": {\r\n                    \"versionId\": \"1\",\r\n                    \"lastUpdated\": \"2026-03-28T20:29:14.548551734Z\"\r\n                },\r\n                \"text\": {\r\n                    \"status\": \"generated\",\r\n                    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Generated by <a href=\\\"https://github.com/synthetichealth/synthea\\\">Synthea</a>.Version identifier: master-branch-latest\\n .   Person seed: -1028339658756901078  Population seed: 1593457889422</div>\"\r\n                },\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName\",\r\n                        \"valueString\": \"Jacquelin132 Zemlak964\"\r\n                    },\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\",\r\n                        \"valueAddress\": {\r\n                            \"city\": \"Haverhill\",\r\n                            \"state\": \"Massachusetts\",\r\n                            \"country\": \"US\"\r\n                        }\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/disability-adjusted-life-years\",\r\n                        \"valueDecimal\": 0.00395599232589674\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/quality-adjusted-life-years\",\r\n                        \"valueDecimal\": 21.996044007674104\r\n                    }\r\n                ],\r\n                \"identifier\": [\r\n                    {\r\n                        \"system\": \"https://github.com/synthetichealth/synthea\",\r\n                        \"value\": \"04c704c4-5d2d-4308-9c33-1690a6e47a6b\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"MR\",\r\n                                    \"display\": \"Medical Record Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Medical Record Number\"\r\n                        },\r\n                        \"system\": \"http://hospital.smarthealthit.org\",\r\n                        \"value\": \"04c704c4-5d2d-4308-9c33-1690a6e47a6b\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"SS\",\r\n                                    \"display\": \"Social Security Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Social Security Number\"\r\n                        },\r\n                        \"system\": \"http://hl7.org/fhir/sid/us-ssn\",\r\n                        \"value\": \"999-83-3466\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"DL\",\r\n                                    \"display\": \"Driver's License\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Driver's License\"\r\n                        },\r\n                        \"system\": \"urn:oid:2.16.840.1.113883.4.3.25\",\r\n                        \"value\": \"S99998319\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"PPN\",\r\n                                    \"display\": \"Passport Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Passport Number\"\r\n                        },\r\n                        \"system\": \"http://standardhealthrecord.org/fhir/StructureDefinition/passportNumber\",\r\n                        \"value\": \"X75739588X\"\r\n                    }\r\n                ],\r\n                \"name\": [\r\n                    {\r\n                        \"use\": \"official\",\r\n                        \"family\": \"Little434\",\r\n                        \"given\": [\r\n                            \"Dexter530\"\r\n                        ],\r\n                        \"prefix\": [\r\n                            \"Mr.\"\r\n                        ]\r\n                    }\r\n                ],\r\n                \"telecom\": [\r\n                    {\r\n                        \"system\": \"phone\",\r\n                        \"value\": \"555-132-1111\",\r\n                        \"use\": \"home\"\r\n                    }\r\n                ],\r\n                \"gender\": \"male\",\r\n                \"birthDate\": \"1997-11-22\",\r\n                \"address\": [\r\n                    {\r\n                        \"extension\": [\r\n                            {\r\n                                \"url\": \"http://hl7.org/fhir/StructureDefinition/geolocation\",\r\n                                \"extension\": [\r\n                                    {\r\n                                        \"url\": \"latitude\",\r\n                                        \"valueDecimal\": 42.153621929974896\r\n                                    },\r\n                                    {\r\n                                        \"url\": \"longitude\",\r\n                                        \"valueDecimal\": -71.33316034414361\r\n                                    }\r\n                                ]\r\n                            }\r\n                        ],\r\n                        \"line\": [\r\n                            \"738 Cassin Club\"\r\n                        ],\r\n                        \"city\": \"Millis\",\r\n                        \"state\": \"Massachusetts\",\r\n                        \"country\": \"US\"\r\n                    }\r\n                ],\r\n                \"maritalStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\",\r\n                            \"code\": \"S\",\r\n                            \"display\": \"Never Married\"\r\n                        }\r\n                    ],\r\n                    \"text\": \"Never Married\"\r\n                },\r\n                \"multipleBirthBoolean\": false,\r\n                \"communication\": [\r\n                    {\r\n                        \"language\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"urn:ietf:bcp:47\",\r\n                                    \"code\": \"en-US\",\r\n                                    \"display\": \"English\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"English\"\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"search\": {\r\n                \"mode\": \"match\"\r\n            }\r\n        },\r\n        {\r\n            \"resource\": {\r\n                \"resourceType\": \"Patient\",\r\n                \"id\": \"05016305-3904-4b36-85da-17e6150998ff\",\r\n                \"meta\": {\r\n                    \"versionId\": \"1\",\r\n                    \"lastUpdated\": \"2026-03-28T20:29:20.319947481Z\"\r\n                },\r\n                \"text\": {\r\n                    \"status\": \"generated\",\r\n                    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Generated by <a href=\\\"https://github.com/synthetichealth/synthea\\\">Synthea</a>.Version identifier: master-branch-latest\\n .   Person seed: 443766480812008728  Population seed: 1593457889422</div>\"\r\n                },\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName\",\r\n                        \"valueString\": \"Chaya236 McClure239\"\r\n                    },\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\",\r\n                        \"valueAddress\": {\r\n                            \"city\": \"Plymouth\",\r\n                            \"state\": \"Massachusetts\",\r\n                            \"country\": \"US\"\r\n                        }\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/disability-adjusted-life-years\",\r\n                        \"valueDecimal\": 0.0\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/quality-adjusted-life-years\",\r\n                        \"valueDecimal\": 37.0\r\n                    }\r\n                ],\r\n                \"identifier\": [\r\n                    {\r\n                        \"system\": \"https://github.com/synthetichealth/synthea\",\r\n                        \"value\": \"05016305-3904-4b36-85da-17e6150998ff\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"MR\",\r\n                                    \"display\": \"Medical Record Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Medical Record Number\"\r\n                        },\r\n                        \"system\": \"http://hospital.smarthealthit.org\",\r\n                        \"value\": \"05016305-3904-4b36-85da-17e6150998ff\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"SS\",\r\n                                    \"display\": \"Social Security Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Social Security Number\"\r\n                        },\r\n                        \"system\": \"http://hl7.org/fhir/sid/us-ssn\",\r\n                        \"value\": \"999-86-1898\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"DL\",\r\n                                    \"display\": \"Driver's License\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Driver's License\"\r\n                        },\r\n                        \"system\": \"urn:oid:2.16.840.1.113883.4.3.25\",\r\n                        \"value\": \"S99925413\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"PPN\",\r\n                                    \"display\": \"Passport Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Passport Number\"\r\n                        },\r\n                        \"system\": \"http://standardhealthrecord.org/fhir/StructureDefinition/passportNumber\",\r\n                        \"value\": \"X28661875X\"\r\n                    }\r\n                ],\r\n                \"name\": [\r\n                    {\r\n                        \"use\": \"official\",\r\n                        \"family\": \"Stoltenberg489\",\r\n                        \"given\": [\r\n                            \"Rafael239\"\r\n                        ],\r\n                        \"prefix\": [\r\n                            \"Mr.\"\r\n                        ]\r\n                    }\r\n                ],\r\n                \"telecom\": [\r\n                    {\r\n                        \"system\": \"phone\",\r\n                        \"value\": \"555-894-9150\",\r\n                        \"use\": \"home\"\r\n                    }\r\n                ],\r\n                \"gender\": \"male\",\r\n                \"birthDate\": \"1982-02-24\",\r\n                \"address\": [\r\n                    {\r\n                        \"extension\": [\r\n                            {\r\n                                \"url\": \"http://hl7.org/fhir/StructureDefinition/geolocation\",\r\n                                \"extension\": [\r\n                                    {\r\n                                        \"url\": \"latitude\",\r\n                                        \"valueDecimal\": 42.40497943914332\r\n                                    },\r\n                                    {\r\n                                        \"url\": \"longitude\",\r\n                                        \"valueDecimal\": -71.08449377268447\r\n                                    }\r\n                                ]\r\n                            }\r\n                        ],\r\n                        \"line\": [\r\n                            \"314 VonRueden Passage\"\r\n                        ],\r\n                        \"city\": \"Malden\",\r\n                        \"state\": \"Massachusetts\",\r\n                        \"country\": \"US\"\r\n                    }\r\n                ],\r\n                \"maritalStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\",\r\n                            \"code\": \"M\",\r\n                            \"display\": \"M\"\r\n                        }\r\n                    ],\r\n                    \"text\": \"M\"\r\n                },\r\n                \"multipleBirthBoolean\": false,\r\n                \"communication\": [\r\n                    {\r\n                        \"language\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"urn:ietf:bcp:47\",\r\n                                    \"code\": \"en-US\",\r\n                                    \"display\": \"English\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"English\"\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"search\": {\r\n                \"mode\": \"match\"\r\n            }\r\n        },\r\n        {\r\n            \"resource\": {\r\n                \"resourceType\": \"Patient\",\r\n                \"id\": \"0679b7b7-937d-488a-b48d-6315b8e7003b\",\r\n                \"meta\": {\r\n                    \"versionId\": \"1\",\r\n                    \"lastUpdated\": \"2026-03-28T20:29:22.592372456Z\"\r\n                },\r\n                \"text\": {\r\n                    \"status\": \"generated\",\r\n                    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Generated by <a href=\\\"https://github.com/synthetichealth/synthea\\\">Synthea</a>.Version identifier: master-branch-latest\\n .   Person seed: 8689591525204053079  Population seed: 1593536077147</div>\"\r\n                },\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName\",\r\n                        \"valueString\": \"Juan88 Conn188\"\r\n                    },\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\",\r\n                        \"valueAddress\": {\r\n                            \"city\": \"Belmont\",\r\n                            \"state\": \"Massachusetts\",\r\n                            \"country\": \"US\"\r\n                        }\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/disability-adjusted-life-years\",\r\n                        \"valueDecimal\": 0.3954752771700445\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/quality-adjusted-life-years\",\r\n                        \"valueDecimal\": 9.604524722829956\r\n                    }\r\n                ],\r\n                \"identifier\": [\r\n                    {\r\n                        \"system\": \"https://github.com/synthetichealth/synthea\",\r\n                        \"value\": \"0679b7b7-937d-488a-b48d-6315b8e7003b\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"MR\",\r\n                                    \"display\": \"Medical Record Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Medical Record Number\"\r\n                        },\r\n                        \"system\": \"http://hospital.smarthealthit.org\",\r\n                        \"value\": \"0679b7b7-937d-488a-b48d-6315b8e7003b\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"SS\",\r\n                                    \"display\": \"Social Security Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Social Security Number\"\r\n                        },\r\n                        \"system\": \"http://hl7.org/fhir/sid/us-ssn\",\r\n                        \"value\": \"999-59-9251\"\r\n                    }\r\n                ],\r\n                \"name\": [\r\n                    {\r\n                        \"use\": \"official\",\r\n                        \"family\": \"Sauer652\",\r\n                        \"given\": [\r\n                            \"Tommy814\"\r\n                        ]\r\n                    }\r\n                ],\r\n                \"telecom\": [\r\n                    {\r\n                        \"system\": \"phone\",\r\n                        \"value\": \"555-892-3457\",\r\n                        \"use\": \"home\"\r\n                    }\r\n                ],\r\n                \"gender\": \"male\",\r\n                \"birthDate\": \"1997-06-28\",\r\n                \"deceasedDateTime\": \"2008-03-15T04:55:51-07:00\",\r\n                \"address\": [\r\n                    {\r\n                        \"extension\": [\r\n                            {\r\n                                \"url\": \"http://hl7.org/fhir/StructureDefinition/geolocation\",\r\n                                \"extension\": [\r\n                                    {\r\n                                        \"url\": \"latitude\",\r\n                                        \"valueDecimal\": 41.92808759271989\r\n                                    },\r\n                                    {\r\n                                        \"url\": \"longitude\",\r\n                                        \"valueDecimal\": -71.25590429868019\r\n                                    }\r\n                                ]\r\n                            }\r\n                        ],\r\n                        \"line\": [\r\n                            \"799 Torp Burg\"\r\n                        ],\r\n                        \"city\": \"Attleboro\",\r\n                        \"state\": \"Massachusetts\",\r\n                        \"postalCode\": \"02861\",\r\n                        \"country\": \"US\"\r\n                    }\r\n                ],\r\n                \"maritalStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\",\r\n                            \"code\": \"S\",\r\n                            \"display\": \"Never Married\"\r\n                        }\r\n                    ],\r\n                    \"text\": \"Never Married\"\r\n                },\r\n                \"multipleBirthBoolean\": false,\r\n                \"communication\": [\r\n                    {\r\n                        \"language\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"urn:ietf:bcp:47\",\r\n                                    \"code\": \"en-US\",\r\n                                    \"display\": \"English\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"English\"\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"search\": {\r\n                \"mode\": \"match\"\r\n            }\r\n        },\r\n        {\r\n            \"resource\": {\r\n                \"resourceType\": \"Patient\",\r\n                \"id\": \"0af11559-08ee-479c-a0d1-5d2d33eda0df\",\r\n                \"meta\": {\r\n                    \"versionId\": \"1\",\r\n                    \"lastUpdated\": \"2026-03-28T20:29:22.362008074Z\"\r\n                },\r\n                \"text\": {\r\n                    \"status\": \"generated\",\r\n                    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Generated by <a href=\\\"https://github.com/synthetichealth/synthea\\\">Synthea</a>.Version identifier: master-branch-latest\\n .   Person seed: 770128811307183450  Population seed: 1593458330238</div>\"\r\n                },\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName\",\r\n                        \"valueString\": \"Patrica776 Feil794\"\r\n                    },\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\",\r\n                        \"valueAddress\": {\r\n                            \"city\": \"Chicopee\",\r\n                            \"state\": \"Massachusetts\",\r\n                            \"country\": \"US\"\r\n                        }\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/disability-adjusted-life-years\",\r\n                        \"valueDecimal\": 0.0\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/quality-adjusted-life-years\",\r\n                        \"valueDecimal\": 9.0\r\n                    }\r\n                ],\r\n                \"identifier\": [\r\n                    {\r\n                        \"system\": \"https://github.com/synthetichealth/synthea\",\r\n                        \"value\": \"0af11559-08ee-479c-a0d1-5d2d33eda0df\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"MR\",\r\n                                    \"display\": \"Medical Record Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Medical Record Number\"\r\n                        },\r\n                        \"system\": \"http://hospital.smarthealthit.org\",\r\n                        \"value\": \"0af11559-08ee-479c-a0d1-5d2d33eda0df\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"SS\",\r\n                                    \"display\": \"Social Security Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Social Security Number\"\r\n                        },\r\n                        \"system\": \"http://hl7.org/fhir/sid/us-ssn\",\r\n                        \"value\": \"999-15-9496\"\r\n                    }\r\n                ],\r\n                \"name\": [\r\n                    {\r\n                        \"use\": \"official\",\r\n                        \"family\": \"Conroy74\",\r\n                        \"given\": [\r\n                            \"Timothy142\"\r\n                        ]\r\n                    }\r\n                ],\r\n                \"telecom\": [\r\n                    {\r\n                        \"system\": \"phone\",\r\n                        \"value\": \"555-214-2778\",\r\n                        \"use\": \"home\"\r\n                    }\r\n                ],\r\n                \"gender\": \"male\",\r\n                \"birthDate\": \"2010-12-26\",\r\n                \"address\": [\r\n                    {\r\n                        \"extension\": [\r\n                            {\r\n                                \"url\": \"http://hl7.org/fhir/StructureDefinition/geolocation\",\r\n                                \"extension\": [\r\n                                    {\r\n                                        \"url\": \"latitude\",\r\n                                        \"valueDecimal\": 42.09661685410584\r\n                                    },\r\n                                    {\r\n                                        \"url\": \"longitude\",\r\n                                        \"valueDecimal\": -71.82587596324437\r\n                                    }\r\n                                ]\r\n                            }\r\n                        ],\r\n                        \"line\": [\r\n                            \"233 Bosco Alley\"\r\n                        ],\r\n                        \"city\": \"Oxford\",\r\n                        \"state\": \"Massachusetts\",\r\n                        \"country\": \"US\"\r\n                    }\r\n                ],\r\n                \"maritalStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\",\r\n                            \"code\": \"S\",\r\n                            \"display\": \"Never Married\"\r\n                        }\r\n                    ],\r\n                    \"text\": \"Never Married\"\r\n                },\r\n                \"multipleBirthBoolean\": false,\r\n                \"communication\": [\r\n                    {\r\n                        \"language\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"urn:ietf:bcp:47\",\r\n                                    \"code\": \"en-US\",\r\n                                    \"display\": \"English\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"English\"\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"search\": {\r\n                \"mode\": \"match\"\r\n            }\r\n        },\r\n        {\r\n            \"resource\": {\r\n                \"resourceType\": \"Patient\",\r\n                \"id\": \"1402cab0-a59e-4885-9649-c007b5fae81c\",\r\n                \"meta\": {\r\n                    \"versionId\": \"1\",\r\n                    \"lastUpdated\": \"2026-03-28T20:29:17.888698360Z\"\r\n                },\r\n                \"text\": {\r\n                    \"status\": \"generated\",\r\n                    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Generated by <a href=\\\"https://github.com/synthetichealth/synthea\\\">Synthea</a>.Version identifier: master-branch-latest\\n .   Person seed: 181470021848733358  Population seed: 1593457889422</div>\"\r\n                },\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName\",\r\n                        \"valueString\": \"Carletta836 Becker968\"\r\n                    },\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\",\r\n                        \"valueAddress\": {\r\n                            \"city\": \"Hanover\",\r\n                            \"state\": \"Massachusetts\",\r\n                            \"country\": \"US\"\r\n                        }\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/disability-adjusted-life-years\",\r\n                        \"valueDecimal\": 0.06513996746042858\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/quality-adjusted-life-years\",\r\n                        \"valueDecimal\": 7.9348600325395715\r\n                    }\r\n                ],\r\n                \"identifier\": [\r\n                    {\r\n                        \"system\": \"https://github.com/synthetichealth/synthea\",\r\n                        \"value\": \"1402cab0-a59e-4885-9649-c007b5fae81c\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"MR\",\r\n                                    \"display\": \"Medical Record Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Medical Record Number\"\r\n                        },\r\n                        \"system\": \"http://hospital.smarthealthit.org\",\r\n                        \"value\": \"1402cab0-a59e-4885-9649-c007b5fae81c\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"SS\",\r\n                                    \"display\": \"Social Security Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Social Security Number\"\r\n                        },\r\n                        \"system\": \"http://hl7.org/fhir/sid/us-ssn\",\r\n                        \"value\": \"999-95-4907\"\r\n                    }\r\n                ],\r\n                \"name\": [\r\n                    {\r\n                        \"use\": \"official\",\r\n                        \"family\": \"Weissnat378\",\r\n                        \"given\": [\r\n                            \"Jerry654\"\r\n                        ]\r\n                    }\r\n                ],\r\n                \"telecom\": [\r\n                    {\r\n                        \"system\": \"phone\",\r\n                        \"value\": \"555-769-9164\",\r\n                        \"use\": \"home\"\r\n                    }\r\n                ],\r\n                \"gender\": \"female\",\r\n                \"birthDate\": \"2011-04-20\",\r\n                \"address\": [\r\n                    {\r\n                        \"extension\": [\r\n                            {\r\n                                \"url\": \"http://hl7.org/fhir/StructureDefinition/geolocation\",\r\n                                \"extension\": [\r\n                                    {\r\n                                        \"url\": \"latitude\",\r\n                                        \"valueDecimal\": 42.34184563191583\r\n                                    },\r\n                                    {\r\n                                        \"url\": \"longitude\",\r\n                                        \"valueDecimal\": -72.36668540761987\r\n                                    }\r\n                                ]\r\n                            }\r\n                        ],\r\n                        \"line\": [\r\n                            \"119 Rice Gardens\"\r\n                        ],\r\n                        \"city\": \"Pelham\",\r\n                        \"state\": \"Massachusetts\",\r\n                        \"country\": \"US\"\r\n                    }\r\n                ],\r\n                \"maritalStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\",\r\n                            \"code\": \"S\",\r\n                            \"display\": \"Never Married\"\r\n                        }\r\n                    ],\r\n                    \"text\": \"Never Married\"\r\n                },\r\n                \"multipleBirthBoolean\": false,\r\n                \"communication\": [\r\n                    {\r\n                        \"language\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"urn:ietf:bcp:47\",\r\n                                    \"code\": \"en-US\",\r\n                                    \"display\": \"English\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"English\"\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"search\": {\r\n                \"mode\": \"match\"\r\n            }\r\n        },\r\n        {\r\n            \"resource\": {\r\n                \"resourceType\": \"Patient\",\r\n                \"id\": \"1e07ac38-4c1d-438a-b673-cae1c8e39e16\",\r\n                \"meta\": {\r\n                    \"versionId\": \"1\",\r\n                    \"lastUpdated\": \"2026-03-28T20:29:16.823365526Z\"\r\n                },\r\n                \"text\": {\r\n                    \"status\": \"generated\",\r\n                    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Generated by <a href=\\\"https://github.com/synthetichealth/synthea\\\">Synthea</a>.Version identifier: master-branch-latest\\n .   Person seed: 173988207550306119  Population seed: 1593457889422</div>\"\r\n                },\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName\",\r\n                        \"valueString\": \"Cora299 Simonis280\"\r\n                    },\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\",\r\n                        \"valueAddress\": {\r\n                            \"city\": \"Quincy\",\r\n                            \"state\": \"Massachusetts\",\r\n                            \"country\": \"US\"\r\n                        }\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/disability-adjusted-life-years\",\r\n                        \"valueDecimal\": 0.0\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/quality-adjusted-life-years\",\r\n                        \"valueDecimal\": 1.0\r\n                    }\r\n                ],\r\n                \"identifier\": [\r\n                    {\r\n                        \"system\": \"https://github.com/synthetichealth/synthea\",\r\n                        \"value\": \"1e07ac38-4c1d-438a-b673-cae1c8e39e16\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"MR\",\r\n                                    \"display\": \"Medical Record Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Medical Record Number\"\r\n                        },\r\n                        \"system\": \"http://hospital.smarthealthit.org\",\r\n                        \"value\": \"1e07ac38-4c1d-438a-b673-cae1c8e39e16\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"SS\",\r\n                                    \"display\": \"Social Security Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Social Security Number\"\r\n                        },\r\n                        \"system\": \"http://hl7.org/fhir/sid/us-ssn\",\r\n                        \"value\": \"999-39-5561\"\r\n                    }\r\n                ],\r\n                \"name\": [\r\n                    {\r\n                        \"use\": \"official\",\r\n                        \"family\": \"Hudson301\",\r\n                        \"given\": [\r\n                            \"Huey641\"\r\n                        ]\r\n                    }\r\n                ],\r\n                \"telecom\": [\r\n                    {\r\n                        \"system\": \"phone\",\r\n                        \"value\": \"555-695-8912\",\r\n                        \"use\": \"home\"\r\n                    }\r\n                ],\r\n                \"gender\": \"male\",\r\n                \"birthDate\": \"2018-06-20\",\r\n                \"address\": [\r\n                    {\r\n                        \"extension\": [\r\n                            {\r\n                                \"url\": \"http://hl7.org/fhir/StructureDefinition/geolocation\",\r\n                                \"extension\": [\r\n                                    {\r\n                                        \"url\": \"latitude\",\r\n                                        \"valueDecimal\": 42.32669377973972\r\n                                    },\r\n                                    {\r\n                                        \"url\": \"longitude\",\r\n                                        \"valueDecimal\": -71.1835653641874\r\n                                    }\r\n                                ]\r\n                            }\r\n                        ],\r\n                        \"line\": [\r\n                            \"662 Kertzmann Highlands Unit 63\"\r\n                        ],\r\n                        \"city\": \"Watertown\",\r\n                        \"state\": \"Massachusetts\",\r\n                        \"country\": \"US\"\r\n                    }\r\n                ],\r\n                \"maritalStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\",\r\n                            \"code\": \"S\",\r\n                            \"display\": \"Never Married\"\r\n                        }\r\n                    ],\r\n                    \"text\": \"Never Married\"\r\n                },\r\n                \"multipleBirthInteger\": 3,\r\n                \"communication\": [\r\n                    {\r\n                        \"language\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"urn:ietf:bcp:47\",\r\n                                    \"code\": \"en-US\",\r\n                                    \"display\": \"English\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"English\"\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"search\": {\r\n                \"mode\": \"match\"\r\n            }\r\n        },\r\n        {\r\n            \"resource\": {\r\n                \"resourceType\": \"Patient\",\r\n                \"id\": \"20a70ecf-c423-4318-82c3-40542074d6a8\",\r\n                \"meta\": {\r\n                    \"versionId\": \"1\",\r\n                    \"lastUpdated\": \"2026-03-28T20:29:15.290965577Z\"\r\n                },\r\n                \"text\": {\r\n                    \"status\": \"generated\",\r\n                    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Generated by <a href=\\\"https://github.com/synthetichealth/synthea\\\">Synthea</a>.Version identifier: master-branch-latest\\n .   Person seed: 4884552749202616612  Population seed: 1593457889422</div>\"\r\n                },\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName\",\r\n                        \"valueString\": \"Adena533 Wilkinson796\"\r\n                    },\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\",\r\n                        \"valueAddress\": {\r\n                            \"city\": \"Haverhill\",\r\n                            \"state\": \"Massachusetts\",\r\n                            \"country\": \"US\"\r\n                        }\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/disability-adjusted-life-years\",\r\n                        \"valueDecimal\": 0.010180916914524702\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/quality-adjusted-life-years\",\r\n                        \"valueDecimal\": 3.989819083085475\r\n                    }\r\n                ],\r\n                \"identifier\": [\r\n                    {\r\n                        \"system\": \"https://github.com/synthetichealth/synthea\",\r\n                        \"value\": \"20a70ecf-c423-4318-82c3-40542074d6a8\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"MR\",\r\n                                    \"display\": \"Medical Record Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Medical Record Number\"\r\n                        },\r\n                        \"system\": \"http://hospital.smarthealthit.org\",\r\n                        \"value\": \"20a70ecf-c423-4318-82c3-40542074d6a8\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"SS\",\r\n                                    \"display\": \"Social Security Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Social Security Number\"\r\n                        },\r\n                        \"system\": \"http://hl7.org/fhir/sid/us-ssn\",\r\n                        \"value\": \"999-92-9210\"\r\n                    }\r\n                ],\r\n                \"name\": [\r\n                    {\r\n                        \"use\": \"official\",\r\n                        \"family\": \"Fadel536\",\r\n                        \"given\": [\r\n                            \"Dorene845\"\r\n                        ]\r\n                    }\r\n                ],\r\n                \"telecom\": [\r\n                    {\r\n                        \"system\": \"phone\",\r\n                        \"value\": \"555-263-8561\",\r\n                        \"use\": \"home\"\r\n                    }\r\n                ],\r\n                \"gender\": \"female\",\r\n                \"birthDate\": \"2015-05-01\",\r\n                \"address\": [\r\n                    {\r\n                        \"extension\": [\r\n                            {\r\n                                \"url\": \"http://hl7.org/fhir/StructureDefinition/geolocation\",\r\n                                \"extension\": [\r\n                                    {\r\n                                        \"url\": \"latitude\",\r\n                                        \"valueDecimal\": 41.866611674283995\r\n                                    },\r\n                                    {\r\n                                        \"url\": \"longitude\",\r\n                                        \"valueDecimal\": -70.91287178355807\r\n                                    }\r\n                                ]\r\n                            }\r\n                        ],\r\n                        \"line\": [\r\n                            \"644 West Club Unit 69\"\r\n                        ],\r\n                        \"city\": \"Middleborough\",\r\n                        \"state\": \"Massachusetts\",\r\n                        \"country\": \"US\"\r\n                    }\r\n                ],\r\n                \"maritalStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\",\r\n                            \"code\": \"S\",\r\n                            \"display\": \"Never Married\"\r\n                        }\r\n                    ],\r\n                    \"text\": \"Never Married\"\r\n                },\r\n                \"multipleBirthBoolean\": false,\r\n                \"communication\": [\r\n                    {\r\n                        \"language\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"urn:ietf:bcp:47\",\r\n                                    \"code\": \"en-US\",\r\n                                    \"display\": \"English\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"English\"\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"search\": {\r\n                \"mode\": \"match\"\r\n            }\r\n        },\r\n        {\r\n            \"resource\": {\r\n                \"resourceType\": \"Patient\",\r\n                \"id\": \"24042b1f-5acb-449f-9948-462618aba6d6\",\r\n                \"meta\": {\r\n                    \"versionId\": \"1\",\r\n                    \"lastUpdated\": \"2026-03-28T20:29:22.957414965Z\"\r\n                },\r\n                \"text\": {\r\n                    \"status\": \"generated\",\r\n                    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Generated by <a href=\\\"https://github.com/synthetichealth/synthea\\\">Synthea</a>.Version identifier: master-branch-latest\\n .   Person seed: -6789520709968396257  Population seed: 1593457889422</div>\"\r\n                },\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName\",\r\n                        \"valueString\": \"Shea825 Boyle917\"\r\n                    },\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\",\r\n                        \"valueAddress\": {\r\n                            \"city\": \"Watertown\",\r\n                            \"state\": \"Massachusetts\",\r\n                            \"country\": \"US\"\r\n                        }\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/disability-adjusted-life-years\",\r\n                        \"valueDecimal\": 0.22835832839835057\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/quality-adjusted-life-years\",\r\n                        \"valueDecimal\": 15.77164167160165\r\n                    }\r\n                ],\r\n                \"identifier\": [\r\n                    {\r\n                        \"system\": \"https://github.com/synthetichealth/synthea\",\r\n                        \"value\": \"24042b1f-5acb-449f-9948-462618aba6d6\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"MR\",\r\n                                    \"display\": \"Medical Record Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Medical Record Number\"\r\n                        },\r\n                        \"system\": \"http://hospital.smarthealthit.org\",\r\n                        \"value\": \"24042b1f-5acb-449f-9948-462618aba6d6\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"SS\",\r\n                                    \"display\": \"Social Security Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Social Security Number\"\r\n                        },\r\n                        \"system\": \"http://hl7.org/fhir/sid/us-ssn\",\r\n                        \"value\": \"999-67-9727\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"DL\",\r\n                                    \"display\": \"Driver's License\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Driver's License\"\r\n                        },\r\n                        \"system\": \"urn:oid:2.16.840.1.113883.4.3.25\",\r\n                        \"value\": \"S99931082\"\r\n                    }\r\n                ],\r\n                \"name\": [\r\n                    {\r\n                        \"use\": \"official\",\r\n                        \"family\": \"Mraz590\",\r\n                        \"given\": [\r\n                            \"Treena759\"\r\n                        ]\r\n                    }\r\n                ],\r\n                \"telecom\": [\r\n                    {\r\n                        \"system\": \"phone\",\r\n                        \"value\": \"555-654-1196\",\r\n                        \"use\": \"home\"\r\n                    }\r\n                ],\r\n                \"gender\": \"female\",\r\n                \"birthDate\": \"2003-10-09\",\r\n                \"address\": [\r\n                    {\r\n                        \"extension\": [\r\n                            {\r\n                                \"url\": \"http://hl7.org/fhir/StructureDefinition/geolocation\",\r\n                                \"extension\": [\r\n                                    {\r\n                                        \"url\": \"latitude\",\r\n                                        \"valueDecimal\": 41.32433137268357\r\n                                    },\r\n                                    {\r\n                                        \"url\": \"longitude\",\r\n                                        \"valueDecimal\": -70.07579527911105\r\n                                    }\r\n                                ]\r\n                            }\r\n                        ],\r\n                        \"line\": [\r\n                            \"1037 Raynor Rapid\"\r\n                        ],\r\n                        \"city\": \"Nantucket\",\r\n                        \"state\": \"Massachusetts\",\r\n                        \"postalCode\": \"02554\",\r\n                        \"country\": \"US\"\r\n                    }\r\n                ],\r\n                \"maritalStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\",\r\n                            \"code\": \"S\",\r\n                            \"display\": \"Never Married\"\r\n                        }\r\n                    ],\r\n                    \"text\": \"Never Married\"\r\n                },\r\n                \"multipleBirthBoolean\": false,\r\n                \"communication\": [\r\n                    {\r\n                        \"language\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"urn:ietf:bcp:47\",\r\n                                    \"code\": \"en-US\",\r\n                                    \"display\": \"English\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"English\"\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"search\": {\r\n                \"mode\": \"match\"\r\n            }\r\n        },\r\n        {\r\n            \"resource\": {\r\n                \"resourceType\": \"Patient\",\r\n                \"id\": \"31070f11-67f9-427b-b378-5f6b43fa6337\",\r\n                \"meta\": {\r\n                    \"versionId\": \"1\",\r\n                    \"lastUpdated\": \"2026-03-28T20:29:11.180755122Z\"\r\n                },\r\n                \"text\": {\r\n                    \"status\": \"generated\",\r\n                    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Generated by <a href=\\\"https://github.com/synthetichealth/synthea\\\">Synthea</a>.Version identifier: master-branch-latest\\n .   Person seed: 345576899623866358  Population seed: 1593457889422</div>\"\r\n                },\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName\",\r\n                        \"valueString\": \"Kerry175 Cummerata161\"\r\n                    },\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\",\r\n                        \"valueAddress\": {\r\n                            \"city\": \"Hamburg\",\r\n                            \"state\": \"Hamburg\",\r\n                            \"country\": \"DE\"\r\n                        }\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/disability-adjusted-life-years\",\r\n                        \"valueDecimal\": 0.0\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/quality-adjusted-life-years\",\r\n                        \"valueDecimal\": 5.0\r\n                    }\r\n                ],\r\n                \"identifier\": [\r\n                    {\r\n                        \"system\": \"https://github.com/synthetichealth/synthea\",\r\n                        \"value\": \"31070f11-67f9-427b-b378-5f6b43fa6337\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"MR\",\r\n                                    \"display\": \"Medical Record Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Medical Record Number\"\r\n                        },\r\n                        \"system\": \"http://hospital.smarthealthit.org\",\r\n                        \"value\": \"31070f11-67f9-427b-b378-5f6b43fa6337\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"SS\",\r\n                                    \"display\": \"Social Security Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Social Security Number\"\r\n                        },\r\n                        \"system\": \"http://hl7.org/fhir/sid/us-ssn\",\r\n                        \"value\": \"999-37-9700\"\r\n                    }\r\n                ],\r\n                \"name\": [\r\n                    {\r\n                        \"use\": \"official\",\r\n                        \"family\": \"Daugherty69\",\r\n                        \"given\": [\r\n                            \"Boris111\"\r\n                        ]\r\n                    }\r\n                ],\r\n                \"telecom\": [\r\n                    {\r\n                        \"system\": \"phone\",\r\n                        \"value\": \"555-706-9971\",\r\n                        \"use\": \"home\"\r\n                    }\r\n                ],\r\n                \"gender\": \"male\",\r\n                \"birthDate\": \"2014-10-05\",\r\n                \"address\": [\r\n                    {\r\n                        \"extension\": [\r\n                            {\r\n                                \"url\": \"http://hl7.org/fhir/StructureDefinition/geolocation\",\r\n                                \"extension\": [\r\n                                    {\r\n                                        \"url\": \"latitude\",\r\n                                        \"valueDecimal\": 41.73946363738915\r\n                                    },\r\n                                    {\r\n                                        \"url\": \"longitude\",\r\n                                        \"valueDecimal\": -70.90153259987089\r\n                                    }\r\n                                ]\r\n                            }\r\n                        ],\r\n                        \"line\": [\r\n                            \"285 Wehner Arcade Suite 25\"\r\n                        ],\r\n                        \"city\": \"New Bedford\",\r\n                        \"state\": \"Massachusetts\",\r\n                        \"postalCode\": \"02746\",\r\n                        \"country\": \"US\"\r\n                    }\r\n                ],\r\n                \"maritalStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\",\r\n                            \"code\": \"S\",\r\n                            \"display\": \"Never Married\"\r\n                        }\r\n                    ],\r\n                    \"text\": \"Never Married\"\r\n                },\r\n                \"multipleBirthBoolean\": false,\r\n                \"communication\": [\r\n                    {\r\n                        \"language\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"urn:ietf:bcp:47\",\r\n                                    \"code\": \"de-DE\",\r\n                                    \"display\": \"German (Germany)\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"German (Germany)\"\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"search\": {\r\n                \"mode\": \"match\"\r\n            }\r\n        },\r\n        {\r\n            \"resource\": {\r\n                \"resourceType\": \"Patient\",\r\n                \"id\": \"33c16607-a3a9-4b31-afae-64e94b6e39b9\",\r\n                \"meta\": {\r\n                    \"versionId\": \"1\",\r\n                    \"lastUpdated\": \"2026-03-28T20:29:21.947077391Z\"\r\n                },\r\n                \"text\": {\r\n                    \"status\": \"generated\",\r\n                    \"div\": \"<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Generated by <a href=\\\"https://github.com/synthetichealth/synthea\\\">Synthea</a>.Version identifier: master-branch-latest\\n .   Person seed: 157419359014185452  Population seed: 1593457889422</div>\"\r\n                },\r\n                \"extension\": [\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName\",\r\n                        \"valueString\": \"Shantae970 Stamm704\"\r\n                    },\r\n                    {\r\n                        \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\",\r\n                        \"valueAddress\": {\r\n                            \"city\": \"Harvard\",\r\n                            \"state\": \"Massachusetts\",\r\n                            \"country\": \"US\"\r\n                        }\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/disability-adjusted-life-years\",\r\n                        \"valueDecimal\": 0.972852472957058\r\n                    },\r\n                    {\r\n                        \"url\": \"http://synthetichealth.github.io/synthea/quality-adjusted-life-years\",\r\n                        \"valueDecimal\": 20.027147527042942\r\n                    }\r\n                ],\r\n                \"identifier\": [\r\n                    {\r\n                        \"system\": \"https://github.com/synthetichealth/synthea\",\r\n                        \"value\": \"33c16607-a3a9-4b31-afae-64e94b6e39b9\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"MR\",\r\n                                    \"display\": \"Medical Record Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Medical Record Number\"\r\n                        },\r\n                        \"system\": \"http://hospital.smarthealthit.org\",\r\n                        \"value\": \"33c16607-a3a9-4b31-afae-64e94b6e39b9\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"SS\",\r\n                                    \"display\": \"Social Security Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Social Security Number\"\r\n                        },\r\n                        \"system\": \"http://hl7.org/fhir/sid/us-ssn\",\r\n                        \"value\": \"999-17-3683\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"DL\",\r\n                                    \"display\": \"Driver's License\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Driver's License\"\r\n                        },\r\n                        \"system\": \"urn:oid:2.16.840.1.113883.4.3.25\",\r\n                        \"value\": \"S99984004\"\r\n                    },\r\n                    {\r\n                        \"type\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\",\r\n                                    \"code\": \"PPN\",\r\n                                    \"display\": \"Passport Number\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"Passport Number\"\r\n                        },\r\n                        \"system\": \"http://standardhealthrecord.org/fhir/StructureDefinition/passportNumber\",\r\n                        \"value\": \"X57677X\"\r\n                    }\r\n                ],\r\n                \"name\": [\r\n                    {\r\n                        \"use\": \"official\",\r\n                        \"family\": \"Pfannerstill264\",\r\n                        \"given\": [\r\n                            \"Tabetha269\"\r\n                        ],\r\n                        \"prefix\": [\r\n                            \"Ms.\"\r\n                        ]\r\n                    }\r\n                ],\r\n                \"telecom\": [\r\n                    {\r\n                        \"system\": \"phone\",\r\n                        \"value\": \"555-927-3493\",\r\n                        \"use\": \"home\"\r\n                    }\r\n                ],\r\n                \"gender\": \"female\",\r\n                \"birthDate\": \"1998-10-14\",\r\n                \"address\": [\r\n                    {\r\n                        \"extension\": [\r\n                            {\r\n                                \"url\": \"http://hl7.org/fhir/StructureDefinition/geolocation\",\r\n                                \"extension\": [\r\n                                    {\r\n                                        \"url\": \"latitude\",\r\n                                        \"valueDecimal\": 42.19959530545696\r\n                                    },\r\n                                    {\r\n                                        \"url\": \"longitude\",\r\n                                        \"valueDecimal\": -71.57440392940202\r\n                                    }\r\n                                ]\r\n                            }\r\n                        ],\r\n                        \"line\": [\r\n                            \"258 Wolff Divide Apt 29\"\r\n                        ],\r\n                        \"city\": \"Upton\",\r\n                        \"state\": \"Massachusetts\",\r\n                        \"postalCode\": \"01568\",\r\n                        \"country\": \"US\"\r\n                    }\r\n                ],\r\n                \"maritalStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\",\r\n                            \"code\": \"S\",\r\n                            \"display\": \"Never Married\"\r\n                        }\r\n                    ],\r\n                    \"text\": \"Never Married\"\r\n                },\r\n                \"multipleBirthBoolean\": false,\r\n                \"communication\": [\r\n                    {\r\n                        \"language\": {\r\n                            \"coding\": [\r\n                                {\r\n                                    \"system\": \"urn:ietf:bcp:47\",\r\n                                    \"code\": \"en-US\",\r\n                                    \"display\": \"English\"\r\n                                }\r\n                            ],\r\n                            \"text\": \"English\"\r\n                        }\r\n                    }\r\n                ]\r\n            },\r\n            \"search\": {\r\n                \"mode\": \"match\"\r\n            }\r\n        }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/llm/summarize",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "llm",
+                "summarize"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "LLM Query",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{id_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"patient_id\": \"05016305-3904-4b36-85da-17e6150998ff\",\r\n    \"datastore_id\": \"96023880411ad9ab19a89b6b24558063\",\r\n    \"conditions\": [\r\n        {\r\n            \"id\": \"2186f3d7-c74f-450e-9938-0fdd14b9b648\",\r\n            \"display\": \"Body mass index 30+ - obesity (finding)\",\r\n            \"resource\": {\r\n                \"resourceType\": \"Condition\",\r\n                \"id\": \"2186f3d7-c74f-450e-9938-0fdd14b9b648\",\r\n                \"meta\": {\r\n                    \"versionId\": \"1\",\r\n                    \"lastUpdated\": \"2026-03-28T20:29:20.320299471Z\"\r\n                },\r\n                \"clinicalStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/condition-clinical\",\r\n                            \"code\": \"active\"\r\n                        }\r\n                    ]\r\n                },\r\n                \"verificationStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/condition-ver-status\",\r\n                            \"code\": \"confirmed\"\r\n                        }\r\n                    ]\r\n                },\r\n                \"code\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://snomed.info/sct\",\r\n                            \"code\": \"162864005\",\r\n                            \"display\": \"Body mass index 30+ - obesity (finding)\"\r\n                        }\r\n                    ],\r\n                    \"text\": \"Body mass index 30+ - obesity (finding)\"\r\n                },\r\n                \"subject\": {\r\n                    \"reference\": \"Patient/05016305-3904-4b36-85da-17e6150998ff\"\r\n                },\r\n                \"encounter\": {\r\n                    \"reference\": \"Encounter/72a72bdf-96ad-495b-91ee-2ffd0efd9622\"\r\n                },\r\n                \"onsetDateTime\": \"1994-03-16T01:44:23-08:00\",\r\n                \"recordedDate\": \"1994-03-16T01:44:23-08:00\"\r\n            }\r\n        },\r\n        {\r\n            \"id\": \"4bb18c02-be2b-4d92-913a-a074393e3bef\",\r\n            \"display\": \"COVID-19\",\r\n            \"resource\": {\r\n                \"resourceType\": \"Condition\",\r\n                \"id\": \"4bb18c02-be2b-4d92-913a-a074393e3bef\",\r\n                \"meta\": {\r\n                    \"versionId\": \"1\",\r\n                    \"lastUpdated\": \"2026-03-28T20:29:20.320527559Z\"\r\n                },\r\n                \"clinicalStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/condition-clinical\",\r\n                            \"code\": \"resolved\"\r\n                        }\r\n                    ]\r\n                },\r\n                \"verificationStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/condition-ver-status\",\r\n                            \"code\": \"confirmed\"\r\n                        }\r\n                    ]\r\n                },\r\n                \"code\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://snomed.info/sct\",\r\n                            \"code\": \"840539006\",\r\n                            \"display\": \"COVID-19\"\r\n                        }\r\n                    ],\r\n                    \"text\": \"COVID-19\"\r\n                },\r\n                \"subject\": {\r\n                    \"reference\": \"Patient/05016305-3904-4b36-85da-17e6150998ff\"\r\n                },\r\n                \"encounter\": {\r\n                    \"reference\": \"Encounter/be465f61-29b8-4f13-9f6b-2ac4f1e07709\"\r\n                },\r\n                \"onsetDateTime\": \"2020-03-08T04:04:23-07:00\",\r\n                \"abatementDateTime\": \"2020-03-29T04:04:23-07:00\",\r\n                \"recordedDate\": \"2020-03-08T04:04:23-07:00\"\r\n            }\r\n        },\r\n        {\r\n            \"id\": \"5ed1a22a-dad2-4291-a42c-61f119aa7004\",\r\n            \"display\": \"Fever (finding)\",\r\n            \"resource\": {\r\n                \"resourceType\": \"Condition\",\r\n                \"id\": \"5ed1a22a-dad2-4291-a42c-61f119aa7004\",\r\n                \"meta\": {\r\n                    \"versionId\": \"1\",\r\n                    \"lastUpdated\": \"2026-03-28T20:29:20.320600913Z\"\r\n                },\r\n                \"clinicalStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/condition-clinical\",\r\n                            \"code\": \"resolved\"\r\n                        }\r\n                    ]\r\n                },\r\n                \"verificationStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/condition-ver-status\",\r\n                            \"code\": \"confirmed\"\r\n                        }\r\n                    ]\r\n                },\r\n                \"code\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://snomed.info/sct\",\r\n                            \"code\": \"386661006\",\r\n                            \"display\": \"Fever (finding)\"\r\n                        }\r\n                    ],\r\n                    \"text\": \"Fever (finding)\"\r\n                },\r\n                \"subject\": {\r\n                    \"reference\": \"Patient/05016305-3904-4b36-85da-17e6150998ff\"\r\n                },\r\n                \"encounter\": {\r\n                    \"reference\": \"Encounter/be465f61-29b8-4f13-9f6b-2ac4f1e07709\"\r\n                },\r\n                \"onsetDateTime\": \"2020-03-08T01:44:23-08:00\",\r\n                \"abatementDateTime\": \"2020-03-29T04:04:23-07:00\",\r\n                \"recordedDate\": \"2020-03-08T01:44:23-08:00\"\r\n            }\r\n        },\r\n        {\r\n            \"id\": \"7a4708ec-26cf-4aff-a820-3a640843469c\",\r\n            \"display\": \"Fatigue (finding)\",\r\n            \"resource\": {\r\n                \"resourceType\": \"Condition\",\r\n                \"id\": \"7a4708ec-26cf-4aff-a820-3a640843469c\",\r\n                \"meta\": {\r\n                    \"versionId\": \"1\",\r\n                    \"lastUpdated\": \"2026-03-28T20:29:20.320870401Z\"\r\n                },\r\n                \"clinicalStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/condition-clinical\",\r\n                            \"code\": \"resolved\"\r\n                        }\r\n                    ]\r\n                },\r\n                \"verificationStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/condition-ver-status\",\r\n                            \"code\": \"confirmed\"\r\n                        }\r\n                    ]\r\n                },\r\n                \"code\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://snomed.info/sct\",\r\n                            \"code\": \"84229001\",\r\n                            \"display\": \"Fatigue (finding)\"\r\n                        }\r\n                    ],\r\n                    \"text\": \"Fatigue (finding)\"\r\n                },\r\n                \"subject\": {\r\n                    \"reference\": \"Patient/05016305-3904-4b36-85da-17e6150998ff\"\r\n                },\r\n                \"encounter\": {\r\n                    \"reference\": \"Encounter/be465f61-29b8-4f13-9f6b-2ac4f1e07709\"\r\n                },\r\n                \"onsetDateTime\": \"2020-03-08T01:44:23-08:00\",\r\n                \"abatementDateTime\": \"2020-03-29T04:04:23-07:00\",\r\n                \"recordedDate\": \"2020-03-08T01:44:23-08:00\"\r\n            }\r\n        },\r\n        {\r\n            \"id\": \"b2d3ca11-20a4-4d8c-9b6b-b189dc57685c\",\r\n            \"display\": \"Suspected COVID-19\",\r\n            \"resource\": {\r\n                \"resourceType\": \"Condition\",\r\n                \"id\": \"b2d3ca11-20a4-4d8c-9b6b-b189dc57685c\",\r\n                \"meta\": {\r\n                    \"versionId\": \"1\",\r\n                    \"lastUpdated\": \"2026-03-28T20:29:20.321254621Z\"\r\n                },\r\n                \"clinicalStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/condition-clinical\",\r\n                            \"code\": \"resolved\"\r\n                        }\r\n                    ]\r\n                },\r\n                \"verificationStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/condition-ver-status\",\r\n                            \"code\": \"confirmed\"\r\n                        }\r\n                    ]\r\n                },\r\n                \"code\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://snomed.info/sct\",\r\n                            \"code\": \"840544004\",\r\n                            \"display\": \"Suspected COVID-19\"\r\n                        }\r\n                    ],\r\n                    \"text\": \"Suspected COVID-19\"\r\n                },\r\n                \"subject\": {\r\n                    \"reference\": \"Patient/05016305-3904-4b36-85da-17e6150998ff\"\r\n                },\r\n                \"encounter\": {\r\n                    \"reference\": \"Encounter/be465f61-29b8-4f13-9f6b-2ac4f1e07709\"\r\n                },\r\n                \"onsetDateTime\": \"2020-03-08T01:44:23-08:00\",\r\n                \"abatementDateTime\": \"2020-03-08T04:04:23-07:00\",\r\n                \"recordedDate\": \"2020-03-08T01:44:23-08:00\"\r\n            }\r\n        },\r\n        {\r\n            \"id\": \"b4af7569-5df0-4d62-9f55-78b58ac19d69\",\r\n            \"display\": \"Acute viral pharyngitis (disorder)\",\r\n            \"resource\": {\r\n                \"resourceType\": \"Condition\",\r\n                \"id\": \"b4af7569-5df0-4d62-9f55-78b58ac19d69\",\r\n                \"meta\": {\r\n                    \"versionId\": \"1\",\r\n                    \"lastUpdated\": \"2026-03-28T20:29:20.321270375Z\"\r\n                },\r\n                \"clinicalStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/condition-clinical\",\r\n                            \"code\": \"resolved\"\r\n                        }\r\n                    ]\r\n                },\r\n                \"verificationStatus\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://terminology.hl7.org/CodeSystem/condition-ver-status\",\r\n                            \"code\": \"confirmed\"\r\n                        }\r\n                    ]\r\n                },\r\n                \"code\": {\r\n                    \"coding\": [\r\n                        {\r\n                            \"system\": \"http://snomed.info/sct\",\r\n                            \"code\": \"195662009\",\r\n                            \"display\": \"Acute viral pharyngitis (disorder)\"\r\n                        }\r\n                    ],\r\n                    \"text\": \"Acute viral pharyngitis (disorder)\"\r\n                },\r\n                \"subject\": {\r\n                    \"reference\": \"Patient/05016305-3904-4b36-85da-17e6150998ff\"\r\n                },\r\n                \"encounter\": {\r\n                    \"reference\": \"Encounter/7ab30297-4a6a-4193-8f8a-c335deee1dec\"\r\n                },\r\n                \"onsetDateTime\": \"2018-09-04T02:44:23-07:00\",\r\n                \"abatementDateTime\": \"2018-09-13T02:44:23-07:00\",\r\n                \"recordedDate\": \"2018-09-04T02:44:23-07:00\"\r\n            }\r\n        }\r\n    ],\r\n    \"count\": 6\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/llm/query?instruction=Why does my ass ache?",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "llm",
+                "query"
+              ],
+              "query": [
+                {
+                  "key": "instruction",
+                  "value": "Why does my ass ache?"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Authenticate",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = pm.response.json();\r",
+              "if (jsonData.AuthenticationResult && jsonData.AuthenticationResult.IdToken) {\r",
+              "    pm.environment.set(\"id_token\", jsonData.AuthenticationResult.IdToken);\r",
+              "    console.log(\"ID Token updated in CS6440 Environment!\");\r",
+              "}"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-Amz-Target",
+            "value": "AWSCognitoIdentityProviderService.InitiateAuth",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/x-amz-json-1.1",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"AuthFlow\": \"USER_PASSWORD_AUTH\",\r\n    \"ClientId\": \"5uv19f4gu7eom90pfk709r7jlh\",\r\n    \"AuthParameters\": {\r\n        \"USERNAME\": \"admin\",\r\n        \"PASSWORD\": \"password\"\r\n    }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://cognito-idp.us-east-1.amazonaws.com/",
+          "protocol": "https",
+          "host": [
+            "cognito-idp",
+            "us-east-1",
+            "amazonaws",
+            "com"
+          ],
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Example",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{id_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/example",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "example"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Test Redaction",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{id_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"resourceType\": \"Patient\",\r\n    \"id\": \"05016305-3904-4b36-85da-17e6150998ff\",\r\n    \"identifier\": [\r\n        {\r\n            \"system\": \"http://hl7.org/fhir/sid/us-ssn\",\r\n            \"value\": \"999-12-3456\"\r\n        }\r\n    ],\r\n    \"name\": [{\"family\": \"Doe\", \"given\": [\"John\"]}],\r\n    \"telecom\": [{\"system\": \"phone\", \"value\": \"555-555-5555\"}],\r\n    \"birthDate\": \"1970-01-01\",\r\n    \"gender\": \"male\",\r\n    \"communication\": [\r\n        {\r\n            \"language\": {\r\n                \"text\": \"English\"\r\n            }\r\n        }\r\n    ],\r\n    \"extension\": [\r\n        {\r\n            \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\",\r\n            \"valueCodeableConcept\": { \"text\": \"White\" }\r\n        }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/example/redact",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "example",
+            "redact"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Patient",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{id_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/patient/05016305-3904-4b36-85da-17e6150998ff",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "patient",
+            "05016305-3904-4b36-85da-17e6150998ff"
+          ],
+          "query": [
+            {
+              "key": "",
+              "value": null,
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Patient Dashboard",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{id_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/patient/05016305-3904-4b36-85da-17e6150998ff/dashboard",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "patient",
+            "05016305-3904-4b36-85da-17e6150998ff",
+            "dashboard"
+          ],
+          "query": [
+            {
+              "key": "",
+              "value": null,
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
